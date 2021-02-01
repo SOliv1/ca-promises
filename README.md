@@ -25,9 +25,9 @@ If our dishwashing promise is fulfilled, we’ll be able to perform related task
 
 All promises eventually settle, enabling us to write logic for what to do if the promise fulfills or if it rejects.
 
-##### Cheatsheat reveiw: https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-promises/cheatsheet
+#### Cheatsheat reveiw: https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-promises/cheatsheet
 
-##### Chaining Multiple Promises
+#### Chaining Multiple Promises
 One common pattern we’ll see with asynchronous programming is multiple operations which depend on each other to execute or that must be executed in a certain order. We might make one request to a database and use the data returned to us to make another request and so on! Let’s illustrate this with another cleaning example, washing clothes:
 
 We take our dirty clothes and put them in the washing machine. If the clothes are cleaned, then we’ll want to put them in the dryer. After the dryer runs, if the clothes are dry, then we can fold them and put them away.
@@ -51,11 +51,11 @@ Write promise chains!
 #### cheatsheat:https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-promises/cheatsheet
 provided code. We require in three functions: checkInventory(), processPayment(), 
 
-view code:
+### view code:
 https://gist.github.com/70dc1b57e133639a695b2ca108e05768https://gist.github.com/494218d15bfd0b13cacbf18c9188ea3a
 https://gist.github.com/494218d15bfd0b13cacbf18c9188ea3a
 
-Avoiding Common Mistakes
+### Avoiding Common Mistakes
 Promise composition allows for much more readable code than the nested callback syntax that preceded it. However, it can still be easy to make mistakes. In this exercise, we’ll go over two common mistakes with promise composition.
 
 Mistake 1: Nesting promises instead of chaining them.
@@ -76,7 +76,7 @@ We invoke a second .then() to handle the logic for the second promise settling a
 Inside that second .then(), we have a success handler which will log the second promise’s resolved value to the console.
 Instead of having a clean chain of promises, we’ve nested the logic for one inside the logic of the other. Imagine if we were handling five or ten promises!
 
-##### Mistake 2: Forgetting to return a promise.
+### some common Mistake 2: Forgetting to return a promise.
 
 returnsFirstPromise()
 .then((firstResolveVal) => {
@@ -110,9 +110,9 @@ Stuck? Get a hint
 Type node app.js in the terminal and hit enter to make sure your program is still working as expected.
 
 Checkpoint 4 Passed
-view the completed code here:
+### view the completed code here:
 https://gist.github.com/494218d15bfd0b13cacbf18c9188ea3a
 Concept Review
-Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
+#### Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
 https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-promises/cheatsheet
 Still have questions? View this exercise's thread in the Codecademy Forums.
