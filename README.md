@@ -37,7 +37,7 @@ firstPromiseFunction()
 .then((firstResolveVal) => {
   return secondPromiseFunction(firstResolveVal);
 })
-.then((secondResolveVal) => {
+.then((secondResolveVal) => 
   console.log(secondResolveVal);
 });
 Let’s break down what’s happening in the example:
@@ -46,12 +46,11 @@ We invoke .then() with an anonymous function as the success handler.
 Inside the success handler we return a new promise— the result of invoking a second function, secondPromiseFunction() with the first promise’s resolved value.
 Invoke a second .then() to handle the logic for the second promise settling.
 Inside that .then(), we have a success handler which will log the second promise’s resolved value to the console.
-In order for our chain to work properly, we had to return the promise secondPromiseFunction(firstResolveVal). This ensured that the return value of the first .then() was our second promise rather than the default return of a new promise with the same settled value as the initial.
-
+In order for our chain to wohttps://gist.github.com/494218d15bfd0b13cacbf18c9188ea3ark properly, we had to return the promise secondPromiseFunction(firstResolveVal). This ensured that the return value of the first .then() was our second promise rather than the default return of a new promise with the same settled value as the initial.
 Write promise chains!
 #### cheatsheat:https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-promises/cheatsheet
-Instructions
-1.
-Take a look at the provided code. We require in three functions: checkInventory(), processPayment(), 
+provided code. We require in three functions: checkInventory(), processPayment(), 
+
 view code:
-https://gist.github.com/70dc1b57e133639a695b2ca108e05768
+https://gist.github.com/70dc1b57e133639a695b2ca108e05768https://gist.github.com/494218d15bfd0b13cacbf18c9188ea3a
+https://gist.github.com/494218d15bfd0b13cacbf18c9188ea3a
