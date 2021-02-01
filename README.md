@@ -1,5 +1,8 @@
 # ca-promises
 
+Review code here: https://github.com/SOliv1/ca-promises-js
+
+
 ### Introduction
 In web development, asynchronous programming is notorious for being a challenging topic.
 An asynchronous operation is one that allows the computer to “move on” to other tasks while waiting for the asynchronous operation to complete. Asynchronous programming means that time-consuming operations don’t have to bring everything else in our programs to a halt.
