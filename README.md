@@ -54,3 +54,65 @@ provided code. We require in three functions: checkInventory(), processPayment()
 view code:
 https://gist.github.com/70dc1b57e133639a695b2ca108e05768https://gist.github.com/494218d15bfd0b13cacbf18c9188ea3a
 https://gist.github.com/494218d15bfd0b13cacbf18c9188ea3a
+
+Avoiding Common Mistakes
+Promise composition allows for much more readable code than the nested callback syntax that preceded it. However, it can still be easy to make mistakes. In this exercise, we’ll go over two common mistakes with promise composition.
+
+Mistake 1: Nesting promises instead of chaining them.
+
+returnsFirstPromise()
+.then((firstResolveVal) => {
+  return returnsSecondValue(firstResolveVal)
+    .then((secondResolveVal) => {
+      console.log(secondResolveVal);
+    })
+})
+Let’s break down what’s happening in the above code:
+
+We invoke returnsFirstPromise() which returns a promise.
+We invoke .then() with a success handler.
+Inside the success handler, we invoke returnsSecondValue() with firstResolveVal which will return a new promise.
+We invoke a second .then() to handle the logic for the second promise settling all inside the first then()!
+Inside that second .then(), we have a success handler which will log the second promise’s resolved value to the console.
+Instead of having a clean chain of promises, we’ve nested the logic for one inside the logic of the other. Imagine if we were handling five or ten promises!
+
+##### Mistake 2: Forgetting to return a promise.
+
+returnsFirstPromise()
+.then((firstResolveVal) => {
+  returnsSecondValue(firstResolveVal)
+})
+.then((someVal) => {
+  console.log(someVal);
+})
+Let’s break down what’s happening in the example:
+
+invoke returnsFirstPromise() which returns a promise.
+We invoke .then() with a success handler.
+Inside the success handler, we create our second promise, but we forget to return it!
+We invoke a second .then(). It’s supposed to handle the logic for the second promise, but since we didn’t return, this .then() is invoked on a promise with the same settled value as the original promise!
+Since forgetting to return our promise won’t throw an error, this can be a really tricky thing to debug!
+
+Instructions
+1.
+The code in app.js works correctly, but it doesn’t follow best practices.
+
+Type node app.js in the terminal and hit enter, so you can see what the program outputs.
+
+Checkpoint 2 Passed
+2.
+Refactor, or rewrite, the code to avoid the two common mistakes: nesting and forgetting to return properly.
+
+Checkpoint 3 Passed
+
+Stuck? Get a hint
+3.
+Type node app.js in the terminal and hit enter to make sure your program is still working as expected.
+
+Checkpoint 4 Passed
+view the completed code here:
+https://gist.github.com/494218d15bfd0b13cacbf18c9188ea3a
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
+https://www.codecademy.com/learn/introduction-to-javascript/modules/javascript-promises/cheatsheet
+Still have questions? View this exercise's thread in the Codecademy Forums.
